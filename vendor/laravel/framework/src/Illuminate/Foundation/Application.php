@@ -20,7 +20,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 *
 	 * @var string
 	 */
-	const VERSION = '5.0.16';
+	const VERSION = '5.0.14';
 
 	/**
 	 * The base path for the Laravel installation.
@@ -186,7 +186,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	}
 
 	/**
-	 * Register a callback to run before a bootstrapper.
+	 * Register a callback to run after a bootstrapper.
 	 *
 	 * @param  string  $bootstrapper
 	 * @param  Closure  $callback
@@ -433,7 +433,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 */
 	public function registerConfiguredProviders()
 	{
-		$manifestPath = $this->basePath().'/vendor/services.json';
+		$manifestPath = $this->storagePath().DIRECTORY_SEPARATOR.'framework'.DIRECTORY_SEPARATOR.'services.json';
 
 		(new ProviderRepository($this, new Filesystem, $manifestPath))
 		            ->load($this->config['app.providers']);
@@ -742,7 +742,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
 	 */
 	public function getCachedRoutesPath()
 	{
-		return $this->basePath().'/vendor/routes.php';
+		return $this['path.storage'].DIRECTORY_SEPARATOR.'framework'.DIRECTORY_SEPARATOR.'routes.php';
 	}
 
 	/**

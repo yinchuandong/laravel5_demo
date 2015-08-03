@@ -286,19 +286,20 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
     protected function normalizeObject($item, $base)
     {
         $item = preg_replace('#\s+#', ' ', trim($item));
-        list($permissions, /* $number */, /* $owner */, /* $group */, $size, /* $month */, /* $day */, /* $time*/, $name) = explode(' ', $item, 9);
+        list($permissions, /* $number */, /* $owner */, /* $group */, $size, $month, $day, $time, $name) = explode(' ', $item, 9);
         $type = $this->detectType($permissions);
+        $timestamp = strtotime($month.' '.$day.' '.$time);
         $path = empty($base) ? $name : $base.$this->separator.$name;
 
         if ($type === 'dir') {
-            return compact('type', 'path');
+            return compact('type', 'path', 'timestamp');
         }
 
         $permissions = $this->normalizePermissions($permissions);
         $visibility = $permissions & 0044 ? AdapterInterface::VISIBILITY_PUBLIC : AdapterInterface::VISIBILITY_PRIVATE;
         $size = (int) $size;
 
-        return compact('type', 'path', 'visibility', 'size');
+        return compact('type', 'path', 'visibility', 'size', 'timestamp');
     }
 
     /**
@@ -382,9 +383,7 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
      */
     public function getTimestamp($path)
     {
-        $timestamp = ftp_mdtm($this->getConnection(), $path);
-
-        return ($timestamp !== -1) ? ['timestamp' => $timestamp] : false;
+        return $this->getMetadata($path);
     }
 
     /**

@@ -4,8 +4,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator as Validator;
-use Illuminate\Support\Facades\DB as DB;
+//use Illuminate\Support\Facades\Validator as Validator;
+//use Illuminate\Support\Facades\DB as DB;
+
+use Validator;
+use DB;
 
 use App\Models\Page;
 
@@ -19,7 +22,7 @@ class AdminHomeComtroller extends Controller {
 	public function index()
 	{
 		//you can costomize the error message in 'resources/lang/cn/validation.php'
-		$validator = Validator::make(
+		$validator = \Validator::make(
 			['name' => 'daye', 'age' => 10],
 			['name' => 'required|min:1']
 		);
@@ -36,7 +39,7 @@ class AdminHomeComtroller extends Controller {
 			exit;
 		}
 
-		$list = DB::table('pages')
+		$list = \DB::table('pages')
 			->where('slug', '=', 'first-page')
 			->where('id', '=', '3')
 			->get();

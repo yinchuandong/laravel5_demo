@@ -161,6 +161,6 @@ class SerializableClosure implements \Serializable
      */
     public function __debugInfo()
     {
-        return $this->data ?: $this->serializer->getData($this->closure, true);
+        return $this->serializer->getData($this->closure);
     }
 }

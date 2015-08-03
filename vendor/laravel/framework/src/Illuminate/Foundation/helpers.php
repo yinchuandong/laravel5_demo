@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Str;
-
 if ( ! function_exists('abort'))
 {
 	/**
@@ -598,11 +596,6 @@ if ( ! function_exists('env'))
 			case 'empty':
 			case '(empty)':
 				return '';
-		}
-		
-		if (Str::startsWith($value, '"') && Str::endsWith($value, '"'))
-		{
-			return substr($value, 1, -1);
 		}
 
 		return $value;

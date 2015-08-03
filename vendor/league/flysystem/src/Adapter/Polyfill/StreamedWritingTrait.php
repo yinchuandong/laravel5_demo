@@ -3,7 +3,6 @@
 namespace League\Flysystem\Adapter\Polyfill;
 
 use League\Flysystem\Config;
-use League\Flysystem\Util;
 
 trait StreamedWritingTrait
 {
@@ -19,7 +18,6 @@ trait StreamedWritingTrait
      */
     protected function stream($path, $resource, Config $config, $fallback)
     {
-        Util::rewindStream($resource);
         $contents = stream_get_contents($resource);
         $fallbackCall = [$this, $fallback];
 

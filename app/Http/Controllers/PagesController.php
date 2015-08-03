@@ -4,9 +4,8 @@ use App\Models\Page;
 
 class PagesController extends Controller {
 
-  public function show($id)
-  {
-    return view('pages.show')->withPage(Page::find($id));
-  }
+    public function show( $id ) {
+        return view( 'pages.show' )->withPage( Page::find( $id ) );
+    }
 
 }

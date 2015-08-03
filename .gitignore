@@ -1,2 +1,5 @@
 .env
 storage/logs
+.settings
+.project
+.idea

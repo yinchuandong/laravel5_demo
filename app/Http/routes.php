@@ -11,18 +11,37 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get( '/', 'HomeController@index' );
 
-Route::get('pages/{id}', 'PagesController@show');
-Route::post('comment/store', 'CommentsController@store');
+Route::get( 'pages/{id}', 'PagesController@show' );
+Route::post( 'comment/store', 'CommentsController@store' );
 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get( 'auth/login', 'Auth\AuthController@getLogin' );
+Route::post( 'auth/login', 'Auth\AuthController@postLogin' );
+Route::get( 'auth/logout', 'Auth\AuthController@getLogout' );
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function()
-{
-  Route::get('/', 'AdminHomeComtroller@index');
-  Route::resource('pages', 'PagesController');
-  Route::resource('comments', 'CommentsController');
+Route::group( ['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function() {
+
+        Route::get( '/', 'AdminHomeComtroller@index' );
+
+        //resource means the methods of url are consistent with that of controllers
+        Route::resource( 'pages', 'PagesController' );
+        Route::resource( 'comments', 'CommentsController' );
+    } );
+
+Route::get( '/fuck/{who}', function($who){
+    // return 'fuck --> '.$who;
+    $pages = App\Models\Page::paginate(1);
+
+    return $pages;
 });
+
+
+
+
+
+
+
+
+
+

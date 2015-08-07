@@ -1,5 +1,6 @@
 .env
 storage/logs
+storage/uploads
 .settings
 .project
 .idea

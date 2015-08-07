@@ -12,6 +12,8 @@
 */
 
 Route::get( '/', 'HomeController@index' );
+Route::get('/register', 'HomeController@register');
+Route::post('/upload', 'HomeController@upload');
 
 Route::get( 'pages/{id}', 'PagesController@show' );
 Route::post( 'comment/store', 'CommentsController@store' );
@@ -22,7 +24,7 @@ Route::get( 'auth/logout', 'Auth\AuthController@getLogout' );
 
 Route::group( ['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function() {
 
-        Route::get( '/', 'AdminHomeComtroller@index' );
+        Route::get( '/', 'AdminHomeController@index' );
 
         //resource means the methods of url are consistent with that of controllers
         Route::resource( 'pages', 'PagesController' );

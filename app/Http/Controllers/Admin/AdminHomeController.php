@@ -12,7 +12,7 @@ use DB;
 
 use App\Models\Page;
 
-class AdminHomeComtroller extends Controller {
+class AdminHomeController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -47,7 +47,7 @@ class AdminHomeComtroller extends Controller {
 		// var_dump($list);
 
 		// $pages = DB::table('pages')->paginate(4);
-		$pages = Page::paginate(1);
+		$pages = Page::paginate(4);
 		// return view('AdminHome')->withPages(Page::all());
 		return view('AdminHome')->withPages($pages);
 	}

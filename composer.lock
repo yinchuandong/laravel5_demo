@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d8d50bf20a747d457c5d40bcd59da80c",
+    "hash": "14ed4ebdc4342d679736699980c22a86",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1101,6 +1101,53 @@
             "time": "2015-07-24 01:24:17"
         },
         {
+            "name": "riverslei/laravel-ueditor",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helei112g/laravel-ueditor.git",
+                "reference": "6595ef0fee2bad9d9930b1c25909125bc965d02f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helei112g/laravel-ueditor/zipball/6595ef0fee2bad9d9930b1c25909125bc965d02f",
+                "reference": "6595ef0fee2bad9d9930b1c25909125bc965d02f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "illuminate/support": "5.0.*|5.1.x",
+                "php": ">=5.4.0",
+                "qiniu/php-sdk": "7.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Riverslei\\UEditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "helei112g",
+                    "email": "helei5200@126.com"
+                }
+            ],
+            "description": "支持laravel5的UEditor，同时支持本地与七牛文件上传",
+            "keywords": [
+                "baidu ueditor",
+                "laravel-ueditor",
+                "laravel5",
+                "laravel5 富文本编辑器",
+                "qiniu",
+                "ueditor"
+            ],
+            "time": "2015-06-30 04:06:51"
+        },
+        {
             "name": "squizlabs/php_codesniffer",
             "version": "2.3.3",
             "source": {
@@ -1173,52 +1220,6 @@
                 "standards"
             ],
             "time": "2015-06-24 03:16:23"
-        },
-        {
-            "name": "stevenyangecho/laravel-u-editor",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stevenyangecho/laravel-u-editor.git",
-                "reference": "5b874a049db4ee0cdb1365652ffc19f4b9fc2e06"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/stevenyangecho/laravel-u-editor/zipball/5b874a049db4ee0cdb1365652ffc19f4b9fc2e06",
-                "reference": "5b874a049db4ee0cdb1365652ffc19f4b9fc2e06",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.0.*|5.1.x",
-                "php": ">=5.4.0",
-                "qiniu/php-sdk": "7.0.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Stevenyangecho\\UEditor\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steven Yang",
-                    "email": "yqmking@163.com"
-                }
-            ],
-            "description": "UEditor for laravel5. Support i18n. UEditor is a Rich Text Web Editor From Baidu.",
-            "keywords": [
-                "laravel",
-                "laravel-u-editor",
-                "laravel5 web text editor",
-                "steven yang",
-                "stevenyangecho",
-                "ueditor"
-            ],
-            "time": "2015-06-13 12:23:55"
         },
         {
             "name": "swiftmailer/swiftmailer",

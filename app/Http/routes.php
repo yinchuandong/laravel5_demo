@@ -14,6 +14,8 @@
 Route::get( '/', 'HomeController@index' );
 Route::get('/register', 'HomeController@register');
 Route::post('/upload', 'HomeController@upload');
+Route::get('/ueditor', 'HomeController@ueditor');
+
 
 Route::get( 'pages/{id}', 'PagesController@show' );
 Route::post( 'comment/store', 'CommentsController@store' );

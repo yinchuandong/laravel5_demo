@@ -146,7 +146,8 @@ return [
 		'App\Providers\RouteServiceProvider',
         
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider', // Laravel IDE helper
-        'Stevenyangecho\UEditor\UEditorServiceProvider' //UEditor
+        // 'Stevenyangecho\UEditor\UEditorServiceProvider', //UEditor
+        'Riverslei\UEditor\UEditorServiceProvider',
 
 	],
 

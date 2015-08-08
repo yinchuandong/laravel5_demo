@@ -40,4 +40,9 @@ class HomeController extends Controller {
         }
     }
 
+    public function ueditor()
+    {
+        return view('vendor.UEditor.test');
+    }
+
 }
